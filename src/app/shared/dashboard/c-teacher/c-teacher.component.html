@@ -81,14 +81,25 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="input">Standard</label>
-          <input type="text" formControlName="standard" class="form-control" id="input" placeholder="Pre-Primary/Primary/High School" [(ngModel)]="teacherObj.standard">
-          <div *ngIf="standard.invalid && standard.touched" class="alert alert-danger">
+          <!-- <input type="text" formControlName="standard" class="form-control" id="input" placeholder="Pre-Primary/Primary/High School" [(ngModel)]="teacherObj.standard"> -->          
+            <select class="form-control">
+            <option class="form-control" value="Pre-Primary">Pre-Primary</option>
+            <option class="form-control" value="Primary">Primary</option>
+            <option class="form-control" value="High School">High School</option>
+          </select>
+          
+          <!-- <div *ngIf="standard.invalid && standard.touched" class="alert alert-danger">
             standard is required.
-        </div>
+        </div> -->
         </div>
       <div class="form-group col-md-4">
           <label for="input">Gender</label>
-          <input type="text" formControlName="gender" class="form-control" id="inputsubject" placeholder="Male/Female/Other" [(ngModel)]="teacherObj.gender">
+          <!-- <input type="text" formControlName="gender" class="form-control" id="inputsubject" placeholder="Male/Female/Other" [(ngModel)]="teacherObj.gender"> -->
+          <select class="form-control">
+            <option class="form-control" value="Male">Male</option>
+            <option class="form-control" value="Female">Female</option>
+            <option class="form-control" value="Others">Others</option>
+          </select>
           <!-- <div *ngIf="gender.invalid && gender.touched" class="alert alert-danger">
             gender is required.
           </div> -->

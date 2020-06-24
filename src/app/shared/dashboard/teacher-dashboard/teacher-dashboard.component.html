@@ -1,6 +1,6 @@
 <span [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="material-icons size margin" >arrow_back</span>
 <div class="text-right">
-<button class="btn btn-outline-primary siz" (click)="createTeacher()"  >create</button>
+<button class="btn btn-outline-primary siz" (click)="createTeacher()"  >Create</button>
 </div>
 <div class="row">
    <div  class="col-md-12 sectionCard" style="overflow-x:auto;">
@@ -25,14 +25,14 @@
           <tbody>
           <tr *ngFor="let item of teacher; index as i">
             <th scope="row">{{ i + 1 }}</th>
-            <td ><a (click)="goToDetails(item)">{{item.firstname}}</a></td> 
-            <td>{{item.lastname}}</td>
-            <td>{{item.qualification}}</td>
+            <td ><a (click)="goToDetails(item)">{{item.firstname | titlecase}}</a></td> 
+            <td>{{item.lastname | titlecase}}</td>
+            <td>{{item.qualification | titlecase}}</td>
             <td>{{item.age}}</td>
-            <td>{{item.subjects}}</td>
+            <td>{{item.subjects | titlecase}}</td>
             <td>{{item.email}}</td>
             <td>{{item.phone}}</td>
-            <td>{{item.gender}}</td>
+            <td>{{item.gender | titlecase}}</td>
             <td>{{item.experience}}</td>
             <td>{{item.standard}}</td>
             <td><button class="btn btn-info" (click)="editTeacher(item)">Edit</button></td>

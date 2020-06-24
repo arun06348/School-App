@@ -12,9 +12,21 @@ import { TeacherService } from './teacher.service';
 })
 export class CTeacherComponent implements OnInit {
 
+  standardType = [
+    {value : 'Pre-Primary' },
+    {value : 'Primary' },
+    {value : 'High School' }
+  ]
+
+  genderType = [
+    {value1 : 'Male' },
+    {value1 : 'Female' },
+    {value1 : 'Others' }
+  ]
   teacherForm: FormGroup;
   // teacherservice: any;
   allTeacher: Object;
+  
   teacherObj={
     firstname:'',
       lastname:'',
@@ -106,5 +118,11 @@ export class CTeacherComponent implements OnInit {
       this.router.navigate(['/dashboard/teacherdashboard']); 
       console.log("teacher added successfully");        
     });
+}
+standardChange(index) {
+  console.log(this.standardType[index]);
+}
+genderChange(index1) {
+  console.log(this.genderType[index1]);
 } 
 }
