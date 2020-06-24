@@ -54,45 +54,6 @@
       "standard": "primary",
       "subjects": "maths",
       "id": 6
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "phone": "",
-      "age": "",
-      "experience": "",
-      "qualification": "",
-      "gender": "",
-      "standard": "",
-      "subjects": "",
-      "id": 7
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "phone": "",
-      "age": "",
-      "experience": "",
-      "qualification": "",
-      "gender": "",
-      "standard": "",
-      "subjects": "",
-      "id": 8
-    },
-    {
-      "firstname": "",
-      "lastname": "",
-      "email": "",
-      "phone": "",
-      "age": "",
-      "experience": "",
-      "qualification": "",
-      "gender": "",
-      "standard": "",
-      "subjects": "",
-      "id": 9
     }
   ]
 }

@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     SharedRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }

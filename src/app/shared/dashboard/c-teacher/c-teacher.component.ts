@@ -5,24 +5,35 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { TeacherService } from './teacher.service';
+interface standardType {
+  value: string;
+  viewValue: string;
+}
+interface genderType {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-c-teacher',
   templateUrl: './c-teacher.component.html',
   styleUrls: ['./c-teacher.component.css']
 })
+
+
 export class CTeacherComponent implements OnInit {
 
-  standardType = [
-    {value : 'Pre-Primary' },
-    {value : 'Primary' },
-    {value : 'High School' }
-  ]
+  Standard:standardType[] = [
+    {value:'0',viewValue : 'Pre-Primary' },
+    {value:'1',viewValue : 'Primary' },
+    {value:'2',viewValue : 'High School' }
+  ];
 
-  genderType = [
-    {value1 : 'Male' },
-    {value1 : 'Female' },
-    {value1 : 'Others' }
-  ]
+  Gender:genderType[] = [
+    {value:'0',viewValue : 'Male' },
+    {value:'1',viewValue : 'Female' },
+    {value:'2',viewValue : 'Others' }
+  ];
   teacherForm: FormGroup;
   // teacherservice: any;
   allTeacher: Object;
@@ -119,10 +130,5 @@ export class CTeacherComponent implements OnInit {
       console.log("teacher added successfully");        
     });
 }
-standardChange(index) {
-  console.log(this.standardType[index]);
-}
-genderChange(index1) {
-  console.log(this.genderType[index1]);
-} 
+
 }

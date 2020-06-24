@@ -12,6 +12,7 @@ import { ClassDashboardComponent } from './class-dashboard/class-dashboard.compo
 import { InventoryDashboardComponent } from './inventory-dashboard/inventory-dashboard.component';
 import { MiscellaneousDashboardComponent } from './miscellaneous-dashboard/miscellaneous-dashboard.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatTableModule} from '@angular/material/table';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
 ]
 })
 export class DashboardModule { }
