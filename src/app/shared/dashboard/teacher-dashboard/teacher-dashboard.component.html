@@ -1,0 +1,44 @@
+<span [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="material-icons size margin" >arrow_back</span>
+<div class="text-right">
+<button class="btn btn-outline-primary siz" (click)="createTeacher()"  >create</button>
+</div>
+<div class="row">
+   <div  class="col-md-12 sectionCard" style="overflow-x:auto;">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+             <th scope="col">First Name</th>
+             <th scope="col">Last Name</th>
+             <th scope="col">Qualification</th>
+             <th scope="col">Age</th>
+             <th scope="col">Teaching Subject</th>
+             <th scope="col">Email</th>
+             <th scope="col">Phone</th>
+             <th scope="col">Gender</th>
+             <th scope="col">Experience</th>
+             <th scope="col">Standard</th>
+             <th scope="col">Edit</th>
+             <th scope="col">Delete</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of teacher; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td ><a (click)="goToDetails(item)">{{item.firstname}}</a></td> 
+            <td>{{item.lastname}}</td>
+            <td>{{item.qualification}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.subjects}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.gender}}</td>
+            <td>{{item.experience}}</td>
+            <td>{{item.standard}}</td>
+            <td><button class="btn btn-info" (click)="editTeacher(item)">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="deleteTeacher(item)">Delete</button></td>
+          </tr>
+          </tbody>
+        </table>
+   </div>
+</div>

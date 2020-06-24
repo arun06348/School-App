@@ -1,0 +1,59 @@
+{
+  "teacher": [
+    {
+      "firstname": "Sirisha",
+      "lastname": "Mote",
+      "email": "sirishamote1@gmail.com",
+      "phone": "9121156656",
+      "age": 21,
+      "experience": 10,
+      "qualification": "B.Tech",
+      "gender": "female",
+      "standard": "pre-primary",
+      "subjects": "telugu",
+      "id": 3,
+      "education": [
+        {
+          "id": 11,
+          "degree": "B.Tech",
+          "yearFrom": "2015",
+          "yearTo": "2017",
+          "stream": "CSE"
+        },
+        {
+          "id": 12,
+          "degree": "inter",
+          "yearFrom": "2016",
+          "yearTo": "2018",
+          "stream": "MPC"
+        }
+      ]
+    },
+    {
+      "firstname": "arun",
+      "lastname": "kumar reddy",
+      "email": "arun@gmail.com",
+      "phone": "8297010082",
+      "age": 21,
+      "experience": 1,
+      "qualification": "B.Tech",
+      "gender": "male",
+      "standard": "primary",
+      "subjects": "maths",
+      "id": 5
+    },
+    {
+      "firstname": "shravya",
+      "lastname": "r",
+      "email": "shravya@gmail.com",
+      "phone": "8745632145",
+      "age": 21,
+      "experience": 1,
+      "qualification": "B.Tech",
+      "gender": "Female",
+      "standard": "primary",
+      "subjects": "maths",
+      "id": 6
+    }
+  ]
+}

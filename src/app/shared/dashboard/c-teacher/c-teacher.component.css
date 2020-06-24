@@ -1,0 +1,11 @@
+.sp{
+    margin-left: 20px;
+}
+input,select{
+    width: 350px;
+}
+.alert{
+    margin-top: 3px;
+    width: 350px !important;
+    height: 40px;    
+}

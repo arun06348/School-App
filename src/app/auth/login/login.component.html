@@ -1,0 +1,38 @@
+<mat-card>
+  <img src="https://www.vetgps.eu/common/img/login.jpg" width="60px" height="100px" style="margin-left: 42%;"  alt="login">
+  <h1 style="margin-left: 42%; color: #007bff;"><b>LOGIN</b></h1>
+  <!-- <p>{{name}}</p> -->
+  <div class="center">
+<form [formGroup]="loginForm" (ngsubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="exampleInputEmail1"> Email address</label>
+    <input formControlName="email" type="email" class="form-control con" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <div *ngIf="email.invalid && email.touched"
+    class="alert alert-danger">
+ <div *ngIf="email.errors.required">
+   email is required.
+ </div>
+ <div *ngIf="email.errors?.email">
+   email should be in correct format
+ </div>
+</div>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input formControlName="password" type="password" class="form-control con" id="exampleInputPassword1" placeholder="Password">
+    <div *ngIf="password.invalid && password.touched"
+    class="alert alert-danger">
+ <div *ngIf="password.errors.required">
+   password is required.
+ </div>
+ <div *ngIf="password.errors.minlength">
+   password must be at least 8 characters long.
+ </div>
+</div>
+  </div>
+  <button type="submit" (click)="onSubmit()"  class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
+  <button type="cancel" (click)="onCancel()"  class="btn btn-danger space">cancel</button>
+</form>
+</div>
+</mat-card>
