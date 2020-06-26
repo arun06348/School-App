@@ -12,6 +12,8 @@ import 'firebase/auth';
 export class LoginComponent implements OnInit {
   loginForm:FormGroup;
   name:string;
+  Token: any;
+  Auth: any;
   constructor(public router:Router) { }
 
   ngOnInit(): void {

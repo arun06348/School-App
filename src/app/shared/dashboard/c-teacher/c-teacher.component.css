@@ -1,7 +1,7 @@
 .sp{
     margin-left: 20px;
 }
-input,select{
+input,mat-option{
     width: 350px;
 }
 .alert{

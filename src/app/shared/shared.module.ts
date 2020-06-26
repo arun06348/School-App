@@ -1,3 +1,4 @@
+
 import { SharedRoutingModule } from './shared-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,7 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
     CommonModule,
     SharedRoutingModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
   ]
 })
 export class SharedModule { }

@@ -13,6 +13,7 @@ import { InventoryDashboardComponent } from './inventory-dashboard/inventory-das
 import { MiscellaneousDashboardComponent } from './miscellaneous-dashboard/miscellaneous-dashboard.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTooltipModule
 ]
 })
 export class DashboardModule { }

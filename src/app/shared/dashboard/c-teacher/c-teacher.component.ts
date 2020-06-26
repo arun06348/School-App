@@ -1,7 +1,7 @@
+import { AlertifyService } from './../alertify.service';
 import { TeacherDashboard } from './../teacher-dashboard/teacher-dashboard.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { TeacherService } from './teacher.service';
@@ -13,15 +13,15 @@ interface genderType {
   value: string;
   viewValue: string;
 }
-
 @Component({
-  selector: 'app-c-teacher',
-  templateUrl: './c-teacher.component.html',
-  styleUrls: ['./c-teacher.component.css']
-})
+      selector: 'app-c-teacher',
+      templateUrl: './c-teacher.component.html',
+      styleUrls: ['./c-teacher.component.css']
+    })
 
 
 export class CTeacherComponent implements OnInit {
+  
 
   Standard:standardType[] = [
     {value:'0',viewValue : 'Pre-Primary' },
@@ -37,6 +37,7 @@ export class CTeacherComponent implements OnInit {
   teacherForm: FormGroup;
   // teacherservice: any;
   allTeacher: Object;
+  teacherSelected:Number;
   
   teacherObj={
     firstname:'',
@@ -54,7 +55,8 @@ export class CTeacherComponent implements OnInit {
   constructor( public fb: FormBuilder,
                 public router:Router,
                 private http:HttpClient,
-                private teacherService:TeacherService
+                private teacherService:TeacherService,
+                private alertify: AlertifyService
                 ) { }
 
   ngOnInit():void {
@@ -127,8 +129,12 @@ export class CTeacherComponent implements OnInit {
     console.log('teacher form :'+JSON.stringify(this.teacherForm.value));
     this.teacherService.addTeacher(this.teacherForm.value).subscribe(()=>{
       this.router.navigate(['/dashboard/teacherdashboard']); 
-      console.log("teacher added successfully");        
+      console.log("teacher added succesfull")
+      this.alertify.successMessage('Teacher added Succesfully');     
     });
 }
+
+
+
 
 }

@@ -13,6 +13,7 @@ export class TeacherService {
 private url='http://localhost:3000/teacher'
   httpClient: any;
   teacher: any;
+  teacherList:TeacherDashboard[];
 
   constructor(private http:HttpClient,
               private router:Router) { }
@@ -26,16 +27,18 @@ private url='http://localhost:3000/teacher'
   addTeacher(teacher) {
     return this.http.post(this.url,teacher);
   }
-  // deleteTeacher() {  
-  //   this.http.delete(this.url + '/' + this.teacher.id)  
-  //     .subscribe(teacher => {  
-  //       let index = this.teacher.indexOf(teacher);  
-  //       this.teacher.splice(index, 1);  
-  //     });  
-  // }  
+  
   deleteTeacher(teacherId){
     console.log("service delete",teacherId)
     return this.http.delete(this.url+'/'+teacherId);
+  }
+  editTeacher(teacher){
+    let present: Boolean = false;
+    this.teacherList.map((val, index)=>{
+      if(val.id == teacher.id) {this.teacherList[index] = teacher;present=true}
+    });
+    return present;
+
   }
 
 }

@@ -10,4 +10,5 @@ export class AppComponent {
   loggedIn:boolean = false;
   isCollapsed = true;
   email:LoginComponent;
+  
 }
