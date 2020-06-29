@@ -1,32 +1,32 @@
 import {Routes, RouterModule} from '@angular/router'
-import { LoginComponent } from './auth/login/login.component';
 import { ContactusComponent } from './shared/contactus/contactus.component';
 import { AboutComponent } from './shared/about/about.component';
 import { HomeComponent } from './shared/home/home.component';
 import { NgModule, Component } from '@angular/core';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 //   {path:'',component:HomeComponent},
 //   {path:'dashboard',
 // loadChildren:()=> import ('./shared/dashboard/dashboard.module').then(a=>a.DashboardModule)
 // },
-//   {path:'home',component:HomeComponent},
-//   {path:'about',component:AboutComponent},
-//   {path:'contactus',component:ContactusComponent},
-  // {path:'login',component:LoginComponent},
+  // {path:'home',component:HomeComponent},
+  // {path:'about',component:AboutComponent},
+  // {path:'contactus',component:ContactusComponent},
+  
  
   {
     path:'',
     loadChildren:()=>
-    import('./auth/auth.module').then(s=>s.AuthModule),
-  
+    import('./shared/shared.module').then(a=>a.SharedModule),
   },
-  //{path:'**',redirectTo:'home'}
-  // {
-  //   path:'',
-  //   loadChildren:()=>
-  //   import('./shared/shared.module').then(a=>a.SharedModule),
-  // }
+  {
+    path:'login',component:LoginComponent
+  },
+  {
+    path:'**',redirectTo:''
+  }
+
 ];
 
 @NgModule({

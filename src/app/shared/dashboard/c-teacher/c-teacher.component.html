@@ -1,17 +1,17 @@
 <span [routerLink]="['/dashboard/teacherdashboard']" routerLinkActive="router-link-active" class="material-icons size" >arrow_back</span>
-<form [formGroup]="teacherForm" (ngSubmit)="addTeacher()" novalidate>
+<form [formGroup]="teacherForm" (ngSubmit)="createTeacher()" novalidate>
     <div class="sp">
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label for="input">First Name</label>
-        <input type="text" formControlName="firstname" class="form-control" id="inputEmail4" placeholder="First Name" [(ngModel)]="teacherObj.firstname">
+        <label for="inputtext">First Name</label>
+        <input type="text" formControlName="firstname" value="" class="form-control" id="inputtext" placeholder="First Name">
       <div *ngIf="firstname.invalid && firstname.touched" class="alert alert-danger">
           First Name is required.
       </div>
     </div>
       <div class="form-group col-md-4">
-        <label for="input">Last Name</label>
-        <input type="text" formControlName="lastname" class="form-control" id="inputPassword4" placeholder="Last Name" [(ngModel)]="teacherObj.lastname" >
+        <label for="inputlastname">Last Name</label>
+        <input type="text" formControlName="lastname" value="" class="form-control" id="inputlastname" placeholder="Last Name"  >
          <div *ngIf="lastname.invalid && lastname.touched" class="alert alert-danger">
           Last Name is required.
       </div>
@@ -20,8 +20,8 @@
     </div>
     <div class="form-row">
     <div class="form-group col-md-4">
-      <label for="input">Email</label>
-      <input type="email" formControlName="email" class="form-control" id="inputemail" placeholder="example@email.com" [(ngModel)]="teacherObj.email">
+      <label for="inputemail">Email</label>
+      <input type="email" formControlName="email" value="" class="form-control" id="inputemail" placeholder="example@email.com" >
       <div *ngIf="email.invalid && email.touched"
       class="alert alert-danger">
    <div *ngIf="email.errors.required">
@@ -33,8 +33,8 @@
   </div>
     </div>
     <div class="form-group col-md-4">
-      <label for="inputphone">Age</label>
-      <input type="number" formControlName="age" class="form-control" id="input" placeholder="years" [(ngModel)]="teacherObj.age">
+      <label for="inputage">Age</label>
+      <input type="number" formControlName="age" value="" class="form-control" id="inputage" placeholder="years" >
       <div *ngIf="age.invalid && age.touched" class="alert alert-danger">
         Age is required.
     </div>
@@ -42,15 +42,15 @@
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label for="input">Experience</label>
-        <input type="number" formControlName="experience" class="form-control" id="inputnumber" placeholder="years" [(ngModel)]="teacherObj.experience">
+        <label for="inputexp">Experience</label>
+        <input type="number" formControlName="experience" value="" class="form-control" id="inputexp" placeholder="years" >
         <div *ngIf="experience.invalid && experience.touched" class="alert alert-danger">
           Experience is required.
       </div>
       </div>
       <div class="form-group col-md-4">
         <label for="inputphone">Phone number</label>
-        <input  formControlName="phone" class="form-control"  placeholder="817****885" [(ngModel)]="teacherObj.phone">
+        <input  formControlName="phone" value="" class="form-control" id="inputphone"  placeholder="817****885" >
         <div *ngIf="phone.invalid && phone.touched"
         class="alert alert-danger">
      <div *ngIf="phone.errors.required">
@@ -64,15 +64,15 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-          <label for="input">Qualification</label>
-          <input type="text" formControlName="qualification" class="form-control" id="input" placeholder="Degree" [(ngModel)]="teacherObj.qualification">
+          <label for="inputqual">Qualification</label>
+          <input type="text" formControlName="qualification" value="" class="form-control" id="inputqualplaceholder="Degree">
           <div *ngIf="qualification.invalid && qualification.touched" class="alert alert-danger">
             Qualification is required.
         </div>
         </div>
         <div class="form-group col-md-4">
-          <label for="input">Teaching Subject</label>
-          <input type="text" formControlName="subjects" class="form-control" id="input" placeholder="Maths" [(ngModel)]="teacherObj.subjects">
+          <label for="inputteach">Teaching Subject</label>
+          <input type="text" formControlName="subjects" value="" class="form-control" id="inputteach" placeholder="Maths">
           <div *ngIf="subjects.invalid && subjects.touched" class="alert alert-danger">
             Subject is required.
           </div>
@@ -81,7 +81,7 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <!-- <label for="input">Standard</label> -->
-          <!-- <input type="text" formControlName="standard" class="form-control" id="input" placeholder="Pre-Primary/Primary/High School" [(ngModel)]="teacherObj.standard"> -->          
+          <!-- <input type="text" formControlName="standard" class="form-control" id="input" placeholder="Pre-Primary/Primary/High School" > -->          
             <!-- <select class="form-control">
             <option class="form-control" value="Pre-Primary">Pre-Primary</option>
             <option class="form-control" value="Primary">Primary</option>
@@ -89,8 +89,8 @@
           </select> -->
           <mat-form-field>
             <mat-label>Standard</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let item of Standard"  [value]="item.value">
+            <mat-select formControlName="standard">
+              <mat-option *ngFor="let item of Standard"  [value]="item.viewValue">
                 {{item.viewValue}}
               </mat-option>
             </mat-select>
@@ -110,8 +110,8 @@
           </select> -->
           <mat-form-field>
             <mat-label>Gender</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let item of Gender" [value]="item.value">
+            <mat-select formControlName="gender">
+              <mat-option *ngFor="let item of Gender" [value]="item.viewValue">
                 {{item.viewValue}}
               </mat-option>
             </mat-select>
@@ -122,7 +122,7 @@
         </div>
       </div>
         <br><br>
-    <!-- <button  type="submit" class="btn btn-primary" [disabled]="teacherForm.invalid">create</button> -->
-    <button  type="submit" class="btn btn-primary">create</button>
+    <button  type="submit" class="btn btn-primary" [disabled]="teacherForm.invalid">{{btnName}}</button>
+    
 </div>
 </form>

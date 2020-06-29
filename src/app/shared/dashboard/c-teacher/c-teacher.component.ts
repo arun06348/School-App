@@ -1,7 +1,7 @@
 import { AlertifyService } from './../alertify.service';
 import { TeacherDashboard } from './../teacher-dashboard/teacher-dashboard.model';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { TeacherService } from './teacher.service';
@@ -21,7 +21,10 @@ interface genderType {
 
 
 export class CTeacherComponent implements OnInit {
-  
+  selectedStandard:string;
+  teacherId:any;
+  btnName:string;
+  teacher:TeacherDashboard={} as TeacherDashboard;
 
   Standard:standardType[] = [
     {value:'0',viewValue : 'Pre-Primary' },
@@ -39,27 +42,22 @@ export class CTeacherComponent implements OnInit {
   allTeacher: Object;
   teacherSelected:Number;
   
-  teacherObj={
-    firstname:'',
-      lastname:'',
-      qualification:'',
-      age:'',
-      subjects:'',
-      email:'',
-      phone:'',
-      gender:'',
-      experience:'',
-      standard:''
-  }
   
   constructor( public fb: FormBuilder,
                 public router:Router,
                 private http:HttpClient,
                 private teacherService:TeacherService,
-                private alertify: AlertifyService
+                private alertify: AlertifyService,
+                private route:ActivatedRoute
                 ) { }
 
   ngOnInit():void {
+    this.teacherId = this.route.snapshot.params['id'];
+    if (this.teacherId) {
+      this.btnName = 'Update';
+    } else {
+      this.btnName = 'Create';
+    }
     this.teacherForm = this.fb.group({ 
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -70,8 +68,9 @@ export class CTeacherComponent implements OnInit {
       qualification: ['', Validators.required],
       gender: ['', Validators.required],
       standard: ['', Validators.required],
-      subjects: ['', Validators.required]      
+      subjects: ['', Validators.required] ,     
     });
+   
   }
   get firstname(){
     return this.teacherForm.get('firstname');
@@ -124,14 +123,33 @@ export class CTeacherComponent implements OnInit {
 //   console.log('Submitted Form : ' + JSON.stringify(this.teacherForm.value));
 //   this.router.navigate(['/dashboard/teacherdashboard'])
 // }
+createTeacher(){
+  if(this.teacherId){
+    this.updateTeacher()
+  }
+  else{
+    this.addTeacher()
+  }
+}
   
   addTeacher(){
     console.log('teacher form :'+JSON.stringify(this.teacherForm.value));
+    // console.log(this.selectedStandard);
     this.teacherService.addTeacher(this.teacherForm.value).subscribe(()=>{
       this.router.navigate(['/dashboard/teacherdashboard']); 
-      console.log("teacher added succesfull")
+      // console.log("teacher added succesfull")
       this.alertify.successMessage('Teacher added Succesfully');     
     });
+}
+
+updateTeacher() {
+  console.log(
+    'Page Values are  Update' + JSON.stringify(this.teacherForm.value)
+  );
+  this.teacherService.updateTeacher(this.teacherForm.value, this.teacherId).subscribe((a) => {
+    this.router.navigate(['/dashboard/teacherdashboard', this.teacher]);
+    this.alertify.successMessage('teacher details Updated Succesfully');
+  });
 }
 
 

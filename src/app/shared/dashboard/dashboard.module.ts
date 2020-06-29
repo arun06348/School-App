@@ -1,5 +1,5 @@
 import { TeacherdetailsComponent } from './teacherdetails/teacherdetails.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CTeacherComponent } from './c-teacher/c-teacher.component';
 import { HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -34,7 +34,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HttpClientModule,
     MatTableModule,
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FormsModule
 ]
 })
 export class DashboardModule { }

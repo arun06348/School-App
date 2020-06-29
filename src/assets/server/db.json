@@ -1,3 +1,17 @@
 {
-  "teacher": []
+  "teacher": [
+    {
+      "firstname": "shravya",
+      "lastname": "l",
+      "email": "shravya@gmail.com",
+      "phone": "8179190885",
+      "age": 21,
+      "experience": 3,
+      "qualification": "B.Tech",
+      "gender": "Female",
+      "standard": "Pre-Primary",
+      "subjects": "maths",
+      "id": 2
+    }
+  ]
 }

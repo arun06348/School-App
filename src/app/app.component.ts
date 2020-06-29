@@ -1,14 +1,24 @@
-import { LoginComponent } from './auth/login/login.component';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'school-app';
-  loggedIn:boolean = false;
-  isCollapsed = true;
-  email:LoginComponent;
   
+  
+    // this.loginservice.isLoggedIn
+    // .subscribe((data)=>{
+    //   console.log("i got data",data);
+    //   this.isUserLogged=true;
+    //   this.email=data;
+    // })
+  // onLoginEventFired(eventArgs:LoggedInUserEventArgs)
+  // {
+  //   if(eventArgs.email)
+  //   {
+  //     this.isUserLogged=true;
+  //     this.email=eventArgs;
+  //   }
+  // }
 }

@@ -43,6 +43,10 @@ const routes: Routes = [
     {
       path:'teacherdetails',
       component:TeacherdetailsComponent
+    },
+    {
+      path:'teacher/edit/:id',
+      component:CTeacherComponent
     }
 
 ]

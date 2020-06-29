@@ -1,5 +1,5 @@
+import { NavbarComponent } from './../navbar/navbar.component';
 import { CTeacherComponent } from './dashboard/c-teacher/c-teacher.component';
-import { LoginComponent } from './../auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +27,15 @@ const routes: Routes = [
     path:'contactus',
     component:ContactusComponent
   },
+  {
+    path:'navbar',
+    component:NavbarComponent
+  },
+  {
+    path:'teacher/edit/:id',
+    component:CTeacherComponent
+  }
+
 
 ];
 

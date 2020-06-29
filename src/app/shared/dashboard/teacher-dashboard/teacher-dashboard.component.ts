@@ -14,8 +14,7 @@ import { AlertifyService } from '../alertify.service';
 export class TeacherDashboardComponent implements OnInit {
   // teacher:TeacherDashboard;
   // id:TeacherService;
-  teacherObj:any;
-  msg:String = '';
+  
   teacher: TeacherDashboard[] = [];
   teacherForm:CTeacherComponent;
    constructor(private route: ActivatedRoute,
@@ -56,13 +55,18 @@ export class TeacherDashboardComponent implements OnInit {
       this.teacherService.deleteTeacher(teacher.id).subscribe(()=>
           {this.getAllTeacher();})
     }
-    editTeacher(item){
-      this.teacherObj=item ;
-      this.router.navigate(['/cTeacher'],item);
+    editTeacher(teacher:TeacherDashboard){
+      this.router.navigate(['/teacher/edit/'+teacher.id],
+      {
+        queryParams:{
+          teacher,
+        },
+        skipLocationChange:true,
+      });
       
     }    
-    goToDetails(item){
-      this.router.navigate(['/dashboard/teacherdetails'],item)
+    goToDetails(teacherForm){
+      this.router.navigate(['/dashboard/teacherdetails'],teacherForm)
     }
       // console.log('teacher form :'+this.teacherForm);
       // this.teacherService.deleteTeacher(this.teacher).subscribe(()=>{

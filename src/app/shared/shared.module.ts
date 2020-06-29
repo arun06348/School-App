@@ -8,6 +8,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
+import { DashboardRefComponent } from './dashboard-ref/dashboard-ref.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
     HomeComponent,
     ContactusComponent,
     AboutComponent,
+    DashboardRefComponent,
   ],
   imports: [
     CommonModule,

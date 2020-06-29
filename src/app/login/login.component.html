@@ -1,3 +1,4 @@
+<div *ngIf="!isLoggedIn">
 <mat-card>
   <img src="https://www.vetgps.eu/common/img/login.jpg" width="60px" height="100px" style="margin-left: 42%;"  alt="login">
   <h1 style="margin-left: 42%; color: #007bff;"><b>LOGIN</b></h1>
@@ -6,7 +7,7 @@
 <form [formGroup]="loginForm" (ngsubmit)="onSubmit()">
   <div class="form-group">
     <label for="exampleInputEmail1"> Email address</label>
-    <input formControlName="email" type="email" class="form-control con" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input formControlName="email" type="email"  class="form-control con" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <div *ngIf="email.invalid && email.touched"
     class="alert alert-danger">
  <div *ngIf="email.errors.required">
@@ -31,8 +32,13 @@
  </div>
 </div>
   </div>
-  <button type="submit" (click)="onSubmit()"  class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
-  <button type="cancel" (click)="onCancel()"  class="btn btn-danger space">cancel</button>
+  <button type="button" (click)="onSubmit()"  [disabled]="loginForm.invalid"  class="btn btn-primary">Submit</button>
+  <button  type="button" (click)="onCancel()"  class="btn btn-danger space">cancel</button>
 </form>
 </div>
 </mat-card>
+</div>
+<!-- <div *ngIf="isLoggedIn">{{name}}</div> -->
+<div *ngIf="isLoggedIn">
+<app-navbar [user]="name"></app-navbar>
+</div>

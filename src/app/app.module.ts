@@ -1,3 +1,5 @@
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 // import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -13,10 +15,14 @@ import { AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
+    NavbarComponent,
+    LoginComponent,
     
   ],
   imports: [
@@ -28,7 +34,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     BrowserAnimationsModule,
     NgbModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatCardModule
     
   ],
   providers: [],

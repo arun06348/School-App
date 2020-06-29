@@ -32,13 +32,8 @@ private url='http://localhost:3000/teacher'
     console.log("service delete",teacherId)
     return this.http.delete(this.url+'/'+teacherId);
   }
-  editTeacher(teacher){
-    let present: Boolean = false;
-    this.teacherList.map((val, index)=>{
-      if(val.id == teacher.id) {this.teacherList[index] = teacher;present=true}
-    });
-    return present;
-
+  updateTeacher(teacher:TeacherDashboard, teacherId:any){
+    return this.http.patch(this.url+'/'+teacherId,teacher);
   }
 
 }
