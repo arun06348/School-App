@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { TeacherService } from './../c-teacher/teacher.service';
 import { CTeacherComponent } from './../c-teacher/c-teacher.component';
 import { TeacherDashboard } from './teacher-dashboard.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { firestore } from 'firebase';
 import { AlertifyService } from '../alertify.service';
@@ -14,7 +14,8 @@ import { AlertifyService } from '../alertify.service';
 export class TeacherDashboardComponent implements OnInit {
   // teacher:TeacherDashboard;
   // id:TeacherService;
-  
+  // @Input() details:TeacherDashboard
+  // @Output() arrayList=new EventEmitter();
   teacher: TeacherDashboard[] = [];
   teacherForm:CTeacherComponent;
    constructor(private route: ActivatedRoute,
@@ -65,8 +66,9 @@ export class TeacherDashboardComponent implements OnInit {
       });
       
     }    
-    goToDetails(teacherForm){
-      this.router.navigate(['/dashboard/teacherdetails'],teacherForm)
+    goToDetails(teacher){
+      // this.arrayList.emit(teacher);
+      this.router.navigate(['/dashboard/teacherdetails'])
     }
       // console.log('teacher form :'+this.teacherForm);
       // this.teacherService.deleteTeacher(this.teacher).subscribe(()=>{

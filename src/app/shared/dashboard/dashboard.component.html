@@ -1,14 +1,6 @@
 <div class="row">
- <div class="col-lg-4"  *ngFor="let item of dataSource"> 
-    <div class="card  bg-light " style="max-width:20rem;">
-   <div class="card-header" >
-    <img [src]="item.image" width="318px"  height="200px" alt="logo"> 
-   </div>
-   <div class="card-body">
-    <h4 class="card-title text-center" [class]="item.txtcolor"><strong>{{item.section}}</strong> </h4>
-    <p class="card-text">{{item.description}}</p>
-    <div class="text-center"><button [class]="item.color" class="btn" type="button" (click)="navigateTo(item)">{{item.button}}</button></div>
-   </div>
- </div>
+ <div class="col-lg-4"  *ngFor="let item of data"> 
+<app-dashboard-ref [item]="item" ></app-dashboard-ref> 
+</div>
 </div>
 

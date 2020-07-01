@@ -65,7 +65,7 @@
     <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputqual">Qualification</label>
-          <input type="text" formControlName="qualification" value="" class="form-control" id="inputqual" placeholder="Degree">
+          <input type="text" formControlName="qualification" value="" class="form-control" id="inputqual"g placeholder="Degree">
           <div *ngIf="qualification.invalid && qualification.touched" class="alert alert-danger">
             Qualification is required.
         </div>
@@ -80,13 +80,6 @@
       </div>
       <div class="form-row">
         <div class="form-group col-md-4">
-          <!-- <label for="input">Standard</label> -->
-          <!-- <input type="text" formControlName="standard" class="form-control" id="input" placeholder="Pre-Primary/Primary/High School" > -->          
-            <!-- <select class="form-control">
-            <option class="form-control" value="Pre-Primary">Pre-Primary</option>
-            <option class="form-control" value="Primary">Primary</option>
-            <option class="form-control" value="High School">High School</option>
-          </select> -->
           <mat-form-field>
             <mat-label>Standard</mat-label>
             <mat-select formControlName="standard">
@@ -95,19 +88,8 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-          
-          <!-- <div *ngIf="standard.invalid && standard.touched" class="alert alert-danger">
-            standard is required.
-        </div> -->
         </div>
       <div class="form-group col-md-4">
-          <!-- <label for="input">Gender</label> -->
-          <!-- <input type="text" formControlName="gender" class="form-control" id="inputsubject" placeholder="Male/Female/Other" [(ngModel)]="teacherObj.gender"> -->
-          <!-- <select class="form-control">
-            <option class="form-control" value="Male">Male</option>
-            <option class="form-control" value="Female">Female</option>
-            <option class="form-control" value="Others">Others</option>
-          </select> -->
           <mat-form-field>
             <mat-label>Gender</mat-label>
             <mat-select formControlName="gender">
@@ -116,9 +98,6 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-          <!-- <div *ngIf="gender.invalid && gender.touched" class="alert alert-danger">
-            gender is required.
-          </div> -->
         </div>
       </div>
         <br><br>
